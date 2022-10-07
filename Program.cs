@@ -119,5 +119,16 @@ int g = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов в массиве - ");
 int h = Convert.ToInt32(Console.ReadLine());
 int [,] arr = new int [g, h];
-CreatArray(arr, g, h);
+CreatArray(arr, 1, 100);
 PrintArray(arr);
+double sum=0;
+for (int l=0; l<arr.GetLength(1); l++)
+{
+    for (int k=0; k<arr.GetLength(0); k++)
+    {
+        sum=sum+arr[k,l];
+    }
+    double sr=sum/g;
+    Console.WriteLine($"Среднее арифметическое чисел в {l+1} столбце = {sr} ");
+    sum=0;
+}
